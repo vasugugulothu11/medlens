@@ -231,36 +231,61 @@ export const Sidebar: React.FC<{ isOpen: boolean; toggleSidebar: () => void }> =
             </div>
           )}
 
-          {/* AI Evaluator Console Link */}
+          {/* AI Evaluator & Account Links */}
           <div>
             <span className="text-[10px] font-extrabold uppercase tracking-widest text-slate-500 block mb-2.5 px-2">
-              Evaluation & Audits
+              System & Portal
             </span>
-            <Link
-              to="/evaluator"
-              onClick={() => isOpen && toggleSidebar()}
-              className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition border ${
-                isActive('/evaluator')
-                  ? 'bg-cyan-950 text-cyan-200 border-cyan-500 shadow-md glow-cyan'
-                  : 'bg-slate-900/90 hover:bg-cyan-950/40 text-cyan-300 border-slate-700/80'
-              }`}
-            >
-              <div className="flex items-center gap-2.5">
-                <Award className="w-4 h-4 text-cyan-400" />
-                <span>AI Evaluator</span>
-              </div>
-              <span className="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-                Live Suite
-              </span>
-            </Link>
+            <div className="space-y-1">
+              <Link
+                to="/evaluator"
+                onClick={() => isOpen && toggleSidebar()}
+                className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition border ${
+                  isActive('/evaluator')
+                    ? 'bg-cyan-950 text-cyan-200 border-cyan-500 shadow-md glow-cyan'
+                    : 'bg-slate-900/90 hover:bg-cyan-950/40 text-cyan-300 border-slate-700/80'
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <Award className="w-4 h-4 text-cyan-400" />
+                  <span>AI Evaluator</span>
+                </div>
+                <span className="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                  Live Suite
+                </span>
+              </Link>
+
+              <Link
+                to="/login"
+                onClick={() => isOpen && toggleSidebar()}
+                className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-xs font-bold transition ${
+                  isActive('/login')
+                    ? 'bg-cyan-950/80 text-cyan-300 border border-cyan-500/40 shadow-md glow-cyan'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-900/60'
+                }`}
+              >
+                <div className="flex items-center gap-2.5">
+                  <ShieldCheck className="w-4 h-4 text-cyan-400" />
+                  <span>Portal Account</span>
+                </div>
+                <span className="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">
+                  Auth
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* Sidebar Footer Status */}
         <div className="p-4 border-t border-slate-800/80 bg-slate-950/60">
-          <div className="flex items-center gap-2 text-[10px] text-slate-400 font-mono">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-            <span>Range Engine: Deterministic</span>
+          <div className="flex items-center justify-between text-[10px] text-slate-400 font-mono">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+              <span>Range Engine: Active</span>
+            </div>
+            <span className="text-[9px] text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/40">
+              v1.0
+            </span>
           </div>
         </div>
       </aside>
