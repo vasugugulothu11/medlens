@@ -1,0 +1,6 @@
+{
+  "name": "MedLens — Clinical Information Intelligence",
+  "description": "AI-powered clinical information intelligence with structured lab extraction, deterministic range verification, inconsistency detection, and 3D anatomical issue mapping.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
